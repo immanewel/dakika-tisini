@@ -1,6 +1,6 @@
 import { Button, Checkbox, DatePicker, DateRangePicker, Input, Radio, RadioGroup, Select, SelectItem, Switch, Textarea, TimeInput } from "@nextui-org/react";
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { ClientActionFunctionArgs, Form } from "@remix-run/react";
+import {  Form } from "@remix-run/react";
 import { ChangeEvent, useState } from "react";
 export const meta: MetaFunction = () => {
   return [
@@ -9,7 +9,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function clientAction({request}:ClientActionFunctionArgs){
+export async function action({request}:ActionFunctionArgs){
   
   const formData = await request.formData();
   console.log(Object.fromEntries(formData))
